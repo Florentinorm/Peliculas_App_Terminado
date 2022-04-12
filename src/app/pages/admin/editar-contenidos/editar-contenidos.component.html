@@ -1,0 +1,41 @@
+&nbsp;
+<ul class="breadcrumb" style="background-color: rgba(255, 255, 255, 0);">
+  <li class="breadcrumb-item"><a href="home">
+      <FONT COLOR="white">Inicio</FONT>
+    </a></li>
+  <li class="breadcrumb-item"><a href="contenidos">
+      <FONT COLOR="white">Tablero Admin</FONT>
+    </a></li>
+  <li class="breadcrumb-item"><a href="/edit/serieserie/:id">
+      <FONT COLOR="white">Nueva Pelicula</FONT>
+    </a></li>
+</ul>
+&nbsp;
+<h1>Nueva Pelicula</h1>
+&nbsp;
+<form style="background-color: rgba(255, 255, 255, 0.692);">
+  <div class="form-group">
+    <label for="titulo">Título</label>
+    <input data-testid="titulo" type="text" autocomplete="off" class="form-control" id="titulo" name="titulo"
+      placeholder="Título del contenido" [(ngModel)]="contenido.titulo">
+  </div>
+  <!-- <router-outlet></router-outlet> -->
+  <div class="row">
+    <div class="col-sm">
+      <app-collection [container]="contenido" collection="actores" type="text" description="Actores"></app-collection>
+    </div>
+    <div class="col-sm">
+      <app-collection [container]="contenido" collection="calificaciones" type="number" description="Calificaciones">
+      </app-collection>
+    </div>
+  </div>
+  <div align="center">
+    <div class="btn-group button-group">
+      <button data-testid="guardar" type="button" class="btn btn-primary" (click)="guardar()">Aceptar</button>
+      <button data-testid="cancelar" type="button" class="btn btn-secondary" (click)="cancelar()">Cancelar</button>
+    </div>
+  </div>
+  <br>
+</form>
+<br>
+<div class="alert alert-danger animate-repeat" *ngFor="let error of contenido.errors">{{error}}</div>

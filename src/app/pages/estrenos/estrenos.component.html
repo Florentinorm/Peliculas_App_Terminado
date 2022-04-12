@@ -1,0 +1,10 @@
+&nbsp;
+<ul class="breadcrumb" style="background-color: rgba(255, 255, 255, 0);">
+    <li class="breadcrumb-item"><a href="home"><FONT COLOR="white">Inicio</FONT></a></li>
+    <li class="breadcrumb-item"><a href="estrenos"><FONT COLOR="white">Estrenos</FONT></a></li>
+</ul>
+<h1 class="mt-5">Estrenos</h1>
+&nbsp;
+<app-peliculas-poster-grid 
+    *ngIf="movies.length > 0"
+    [movies]="movies"></app-peliculas-poster-grid>

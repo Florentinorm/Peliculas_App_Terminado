@@ -1,0 +1,65 @@
+<div id="logo">
+    <h1><i>MovieOne</i></h1>
+</div>
+<section class="stark-login">
+    <form (ngSubmit)="onSubmit(f)" #f='ngForm' class="login100-form validate-form flex-sb flex-w">
+        <div id="fade-box">
+            <div class="container" style="text-align:center">
+                <span class="p-b-51">
+                    Crear nueva cuenta
+                </span>
+
+                <div class="m-b-16">
+                    <span *ngIf="f.submitted && f.controls['email'].errors" class="text-danger animated fadeIn">El
+                        correo es obligatorio</span>
+                    <input class="input100 " type="email" name="email" [(ngModel)]="usuario.email" required email
+                        placeholder="Email">
+                    <span class="focus-input100"></span>
+                </div>
+
+                <div class="m-b-16">
+                    <span *ngIf="f.submitted && f.controls['nombre'].errors" class="text-danger animated fadeIn">El
+                        nombre es obligatorio</span>
+                    <input class="input100" type="text" name="nombre" minlength="2" [(ngModel)]="usuario.nombre"
+                        required placeholder="Nombre y apellidos">
+                    <span class="focus-input100"></span>
+                </div>
+
+                <div class="m-b-16">
+                    <span *ngIf="f.submitted && f.controls['password'].errors" class="text-danger animated fadeIn ">La
+                        contraseña debe de ser más de 6 letras</span>
+                    <input class="input100" type="password" name="password" [(ngModel)]="usuario.password" minlength="6"
+                        required placeholder="Password">
+                    <span class="focus-input100 "></span>
+                </div>
+
+                <div class="flex-sb-m w-full p-t-3 p-b-24">
+                    <div class="contact100-form-checkbox">
+                        <input [(ngModel)]="recordarme" class="input-checkbox100" id="ckb1" type="checkbox"
+                            name="remember-me">
+                        <label class="label-checkbox100" for="ckb1">
+                            Recordar mi usuario
+                        </label>
+                    </div>
+
+                    <div>
+                        <a href="/ini" class="txt1">
+                            ¿Ya tienes cuenta? / Ingresar
+                        </a>
+                    </div>
+                </div>
+
+                <div class="container-login100-form-btn m-t-17">
+                    <button class="login100-form-btn" type="submit">
+                        Crear cuenta
+                    </button>
+                </div>
+            </div>
+        </div>
+    </form>
+</section>
+<div id="circle1">
+    <div id="inner-cirlce1">
+        <h2> </h2>
+    </div>
+</div>

@@ -1,0 +1,39 @@
+&nbsp;
+<ul class="breadcrumb" style="background-color: rgba(255, 255, 255, 0);">
+    <li class="breadcrumb-item"><a href="home"><FONT COLOR="white">Inicio</FONT></a></li>
+    <li class="breadcrumb-item"><a href="contenidos"><FONT COLOR="white">Tablero Admin</FONT></a></li>
+</ul>
+&nbsp;
+<h1>Tablero Admin</h1>
+&nbsp;
+<div class="form-inline">
+    <button data-testid="nueva-serie" type="button" class="btn" (click)="nuevaSerie()">Nueva serie</button>
+    &nbsp;
+    <button data-testid="nueva-pelicula" type="button" class="btn" (click)="nuevaPelicula()">Nueva película</button>
+  </div>
+  <br>
+  <table class="table table-responsive-sm table-hover" style="background-color: rgba(255, 255, 255, 0.692);">
+    <thead class="table-info">
+      <tr>
+        <th scope="col">Título</th>
+        <th scope="col">Actores</th>
+        <th scope="col">Popularidad</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let contenido of contenidos" class="animate-repeat" [attr.data-testid]="'fila-' + contenido.id">
+        <td class="titulo" scope="row" title="{{contenido.datosAdicionales()}}">
+          <img src="{{contenido.image()}}" title="{{contenido.label}}">
+          <a routerLink="/edit/{{contenido.type}}/{{contenido.id}}" routerLinkActive="active">
+            {{contenido.titulo}}
+          </a>
+        </td>
+        <td>{{contenido.protagonistas}}</td>
+        <td>{{contenido.popularidad}}</td>
+        <td>
+          <button (click)="eliminar(contenido)" [attr.data-testid]="'eliminar-' + contenido.id" class="btn">x</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>

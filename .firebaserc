@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "student-managment-system-fe48f": {
+      "hosting": {
+        "peliculasApp": [
+          "student-managment-system-fe48f"
+        ]
+      }
+    }
+  }
+}

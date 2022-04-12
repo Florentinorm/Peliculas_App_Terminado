@@ -1,0 +1,79 @@
+/* Inicio body */
+/*body*/
+body {
+
+    background: linear-gradient(-35deg, #000000f1, #1b0554, #550db4, #0000ee);
+    background-size: 400% 400%;
+    -webkit-animation: gradient 5s ease infinite;
+	        animation: gradient 5s ease infinite;
+}
+
+@-webkit-keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+.logo{
+    width: 40%;
+    box-shadow:5px 5px 10px grey;
+    
+}
+.card-mt-6{
+    border-radius: 15px;
+    background-color: white;
+}
+/* body {
+    background-color: #14161E;
+} */
+/* Fin del body */
+h1,h2,h3,h4,h5 {
+    font-weight: 200;
+    color: white;
+}
+
+p {
+    color: white;
+}
+
+hr{
+    color: white;
+}
+
+.navbar-brand {
+    font-weight: 200;
+    color: #bd4c5f !important;
+}
+
+.btn-outline-success {
+    border-color: #bd4c5f !important;;
+    color: #bd4c5f !important;;
+}
+
+.btn-outline-success:hover {
+    background-color: #272a36;
+    color: white !important;
+}
+
+.block {
+    display:block;
+}

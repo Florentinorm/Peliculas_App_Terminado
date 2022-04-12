@@ -1,0 +1,46 @@
+&nbsp;
+<ul class="breadcrumb" style="background-color: rgba(255, 255, 255, 0);">
+    <li class="breadcrumb-item"><a href="home"><FONT COLOR="white">Inicio</FONT></a></li>
+    <li class="breadcrumb-item"><a href="/login"><FONT COLOR="white">Ingresar</FONT></a></li>
+</ul>
+&nbsp;
+<div id="logo">
+  <h1><i>MovieOne</i></h1>
+</div>
+<section class="stark-login">
+          <h1 class="text-center">LOGIN</h1>
+          <form [formGroup]="loginForm" (ngSubmit)="onLogin()"  class="login100-form validate-form flex-sb flex-w">
+
+
+            <div id="fade-box">
+              <input type="email"
+                formControlName="email" 
+                required placeholder="email"/>
+           <br> 
+              <input
+                type="password"
+                formControlName="password"
+                required placeholder="Password"
+              />
+            <button type="submit">
+              Login
+            </button>
+            <p>
+              Crea una cuenta ? <a [routerLink]="['/register']"> Register </a>
+            </p>
+            <p>
+              <a [routerLink]="['/forgot-password']"> Se te olvidó tu contraseña ? </a>
+            </p>
+          
+
+
+        </div>
+      </form>
+</section>
+<div id="circle1">
+  <div id="inner-cirlce1">
+      <h2> </h2>
+  </div>
+</div>
+  <br>
+  <br>

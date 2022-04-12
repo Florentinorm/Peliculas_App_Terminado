@@ -1,0 +1,65 @@
+&nbsp;
+<ul class="breadcrumb" style="background-color: rgba(255, 255, 255, 0);">
+    <li class="breadcrumb-item"><a href="home"><FONT COLOR="white">Inicio</FONT></a></li>
+    <li class="breadcrumb-item"><a href="home"><FONT COLOR="white">Peliculas</FONT></a></li>
+    <li class="breadcrumb-item"><a href="#"><FONT COLOR="white">{{ pelicula.title }}</FONT></a></li>
+</ul>
+&nbsp;
+
+<div class="row animate__animated animate__fadeIn animate__faster" *ngIf="pelicula">
+    <div class="col-md-6">
+        <!-- Imagen -->
+        <img [src]="pelicula.poster_path | poster" 
+             [alt]="pelicula.title"
+             class="img-thumbnail">
+    </div>
+
+    <div class="col-md-6">
+        <h3>{{ pelicula.title }}</h3>
+
+        <div class="row ">
+            <div class="col">
+                <star-rating [value]="pelicula.vote_average" 
+                            totalstars="10"
+                            checkedcolor="yellow" 
+                            uncheckedcolor="grey" 
+                            size="15px" 
+                            readonly="false"></star-rating>
+            </div>
+            <div class="col text-white">
+                {{ pelicula.vote_average | number:'1.1-2' }}
+            </div>
+        </div>
+
+        <div class="row mt-3">
+            <div class="col text-white">
+                {{ pelicula.overview }}
+            </div>
+        </div>
+        <br>
+        <!-- pelicula mega -->
+        <iframe width="640" height="360" frameborder="0" src="https://mega.nz/embed/O35GlYZY#AOr0Td7Nq4St2faSaUPXWLsAAQu2XmDpJsNA7K849ig!1a" allowfullscreen allow="autoplay;"></iframe>
+
+
+        <div class="row mt-5">
+            <div class="col">
+                <button class="btn btn-outline-info"
+                        (click)="onRegresar()">
+                    Regresar
+                </button>
+                &nbsp;&nbsp;
+                <a class="btn btn-outline-info" href="https://cuevana3.plus/peliculas-online/spider-man-sin-camino-a-casa-online-en-cuevana/?download=d1Erem9Ia3kzYWNNMk1lOXEyTGVDZz09" download="Spider-Man: Sin camino a casa">
+                    Descargar Archivo
+                    </a>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+<div class="row mt-5" *ngIf="cast.length > 0">
+    <div class="col">
+        <app-cast-slideshow [cast]="cast"></app-cast-slideshow>
+    </div>
+</div>
